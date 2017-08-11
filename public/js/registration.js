@@ -40,7 +40,7 @@ function setAvatar(avatarName) {
  * This object is then stored at https://birchaquarium-fd036.firebaseio.com/42
  */
 /********** create user object and put in database **********/
-function writeToFirebase(rfidInput, languageInput, avatarInput, nameInput, ageGroupInput) {
+function writeToFirebase(rfidInput, languageInput, avatarInput, nameInput, ageGroupInput, pathwayInput) {
 
     // Write the object under the database root "users"
     // Database schema: RFID tree-->user object that contains links id with name and age group
@@ -52,6 +52,7 @@ function writeToFirebase(rfidInput, languageInput, avatarInput, nameInput, ageGr
         avatar: avatarInput,
         name: nameInput,
         ageGroup: ageGroupInput,
+        pathway: pathwayInput,
     });
 }
 
@@ -61,9 +62,9 @@ function update() {
     var languageText = document.getElementById("languageInput").value;
     var nameText = document.getElementById("nameInput").value;
     var ageGroupText = document.getElementById("ageGroupInput").value;
-
+    var pathwayText = document.getElementById("pathwayInput").value;
     // Write user object to Firebase under the key rfidText
-    writeToFirebase(rfidText, languageText, avatarText, nameText, ageGroupText);
+    writeToFirebase(rfidText, languageText, avatarText, nameText, ageGroupText,pathwayText);
 
     // For debugging: Set the paragraph element with the id "testTextDisplay" to contain the text that was inputted
     //document.getElementById("testTextDisplay").innerHTML = "RFID: " + rfidText + ", Name: " + nameText + ", Age group: " + ageGroupText;

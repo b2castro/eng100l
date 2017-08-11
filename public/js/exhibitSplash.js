@@ -8,6 +8,7 @@ $(document).ready(function () {
     "use strict";
     var scanned = false,
         scannedInput = [];
+    
 
     $(window).keypress(function (scanEvent) {
 
@@ -21,16 +22,15 @@ $(document).ready(function () {
         setTimeout(function () {
 
             // if length is equivalent to proper length, add the string to userID variable
-            if (scannedInput.length === 10) {
+            if (scannedInput.length === 8) {
 
                 // store array into string
                 var userID = scannedInput.join("");
-                scanned = true;
+                
                 $("#userId").val(userID);
                 console.log("user: " + userID);
 
-
-                if (scanned) {
+                if (true) {
                     console.log("scanned");
                     //save RFID input
                     window.localStorage.setItem('userID', userID);

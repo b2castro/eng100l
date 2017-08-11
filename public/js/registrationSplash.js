@@ -18,8 +18,8 @@ $(document).ready(function () {
 
         setTimeout(function () {
 
-            // if length is equivalent to proper length, add the string to userID variable
-            if (scannedInput.length === 10) {
+            //if length is equivalent to proper length, add the string to userID variable
+            if (scannedInput.length === 8){
 
                 // store array into string
                 var userID = scannedInput.join("");
