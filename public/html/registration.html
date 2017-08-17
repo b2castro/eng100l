@@ -50,14 +50,15 @@
                         <div class="col-sm-12">
                             <table class="table" id="avatarTable">
                                 <tr>
-                                    <td><img src="../img/avatars/butterflyfish.png" onclick="setAvatar('Bea the Butterflyfish')" class="avatar butterflyfish"></td>
-                                    <td><img src="../img/avatars/sea-horse2.png" class="img-responsive" onclick="setAvatar('Sam the Seahorse')" class="avatar seahorse2"></td>
-                                    <td><img src="../img/avatars/sea-turtle.png" onclick="setAvatar('Tammy the Turtle')" class="avatar turtle"></td>
+                                    <td><img id="butterflyfish" src="../img/avatars/butterflyfish.png" onclick="setAvatar('butterflyfish')" class="avatar butterflyfish" ></td>
+                                    <td><img id="seahorse2" src="../img/avatars/sea-horse2.png" class="img-responsive" onclick="setAvatar('seahorse2')" class="avatar seahorse2"></td>
+                                    <td><img id="turtle" src="../img/avatars/sea-turtle.png" onclick="setAvatar('turtle')" class="avatar turtle" ></td>
                                 </tr>
                                 <tr>
-                                    <td onclick="setAvatar('Bea the Butterflyfish')" class="avatar butterflyfish">Bea the Butterflyfish</td>
-                                    <td onclick="setAvatar('Sam the Seahorse')" class="avatar seahorse2">Sam the Seahorse</td>
-                                    <td onclick="setAvatar('Tammy the Turtle')" class="avatar turtle">Tammy the Turtle</td>
+                                    <td onclick="setAvatar('butterflyfish')" class="avatar butterflyfish">Bea the Butterflyfish</td>
+                                    <td onclick="setAvatar('seahorse2')" class="avatar seahorse2">Sam the Seahorse</td>
+                                    <td onclick="setAvatar('turtle')" class="avatar turtle">Tammy the Turtle</td>
+                                    <!-- Bea the Butterflyfish, Sam the Seahorse, Tammy the Turtle -->
                                 </tr>
                             </table>
                         </div>
@@ -88,7 +89,7 @@
                     </div>
                     <div class="col-sm-3"></div>
                 </div>
-                
+
                  <div class="form-group">
                     <div class="col-sm-1"></div>
                     <label for="ageGroup" class="col-sm-4">Select your "Professional Pathway":</label>
@@ -118,6 +119,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 
+    <script src="../js/showBorder.js"></script>
     <script src="../js/registration.js"></script>
 </body>
 

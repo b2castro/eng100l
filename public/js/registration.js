@@ -30,6 +30,9 @@ console.log(rfidText);
 function setAvatar(avatarName) {
     avatarText = avatarName;
     console.log(avatarText);
+
+    showBorder( avatarName );
+
 }
 
 /* Write an object to the Firebase database under the database RFID tree
