@@ -43,7 +43,7 @@ function setAvatar(avatarName) {
  * This object is then stored at https://birchaquarium-fd036.firebaseio.com/42
  */
 /********** create user object and put in database **********/
-function writeToFirebase(rfidInput, languageInput, avatarInput, nameInput, ageGroupInput, pathwayInput) {
+function writeToFirebase(rfidInput, languageInput, avatarInput, nameInput, ageGroupInput, pathwayInput, emailInput) {
 
     // Write the object under the database root "users"
     // Database schema: RFID tree-->user object that contains links id with name and age group
@@ -56,23 +56,61 @@ function writeToFirebase(rfidInput, languageInput, avatarInput, nameInput, ageGr
         name: nameInput,
         ageGroup: ageGroupInput,
         pathway: pathwayInput,
+        email: emailInput,
     });
+
+    //Update number of registered users
+    updateData( database );
 }
 
 /********** upon pressing "submit" form gets saved and database gets updated **********/
 function update() {
+
+    //var valid = false;
+
     //Get values from the text boxes. value of rfidText is already saved
     var languageText = document.getElementById("languageInput").value;
     var nameText = document.getElementById("nameInput").value;
     var ageGroupText = document.getElementById("ageGroupInput").value;
     var pathwayText = document.getElementById("pathwayInput").value;
-    // Write user object to Firebase under the key rfidText
-    writeToFirebase(rfidText, languageText, avatarText, nameText, ageGroupText,pathwayText);
+    var emailText = document.getElementById("emailInput").value;
 
+
+    //TODO TODO TODO parse these inputs for malicious stuff TODO TODO TODO
+
+    //Email verification
+    /*try{
+      //Email RegExp
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      alert( mailformat );
+
+      if( !( emailText.value.match(mailformat)) ) {
+        alert("You have entered an invalid email address!");
+        valid = false;
+      }
+      else{
+        console.log( "valid email" );
+        valid = true;
+      }
+    }catch( err ){
+
+      alert( "Error..." + err );
+      valid = false;
+
+    } //End catch block*/
+
+
+    //if( valid ){
+      // Write user object to Firebase under the key rfidText
+      writeToFirebase(rfidText, languageText, avatarText, nameText,
+        ageGroupText, pathwayText, emailText );
+    //}
     // For debugging: Set the paragraph element with the id "testTextDisplay" to contain the text that was inputted
     //document.getElementById("testTextDisplay").innerHTML = "RFID: " + rfidText + ", Name: " + nameText + ", Age group: " + ageGroupText;
 }
 
 function redirect(){
+    alert( "redirecting!" );
     window.location.href = "../html/registrationSplash.html"
-  }
+}
